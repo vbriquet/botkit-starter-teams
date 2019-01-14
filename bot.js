@@ -49,10 +49,12 @@ var controller = Botkit.teamsbot(bot_options);
 //
 // Addition for Dialogflow middleware
 //
+/*
 var dialogflowMiddleware = require('botkit-middleware-dialogflow')({
     token: process.env.DIALOGFLOW_CLIENT_ACCESS_KEY,
 });
 controller.middleware.receive.use(dialogflowMiddleware.receive);
+*/
 
 // Set up an Express-powered webserver to expose oauth and webhook endpoints
 var webserver = require(__dirname + '/components/express_webserver.js')(controller);
@@ -70,7 +72,7 @@ require("fs").readdirSync(normalizedPath).forEach(function(file) {
 
 console.log('I AM ONLINE! COME TALK TO ME: http://localhost:' + process.env.PORT)
 
-
+/*
 //
 // Handling the conversation itself, with hears/say/ask/reply
 //
@@ -97,6 +99,14 @@ controller.hears('smalltalk(.*)', 'direct_message,direct_mention', dialogflowMid
     console.log ("Speech message received from SmallTalk: " + message.fulfillment.speech);
     bot.reply (message, message.fulfillment.speech);
 });
+*/
+
+controller.on('direct_message, direct_mention', function(bot, message) {
+      bot.reply(message, 'I need an API token from Botkit Studio to do more stuff. Get one here: https://studio.botkit.ai')
+    });
+console.log('~~~~~~~~~~');
+console.log('NOTE: Botkit Studio functionality has not been enabled');
+console.log('To enable, pass in a studio_token parameter with a token from https://studio.botkit.ai/');
 
 
 function usage_tip() {
