@@ -94,12 +94,13 @@ controller.hears(['following-trains'], 'direct_message,direct_mention', dialogfl
     var iRail = require("./fulfillment/iRail")(message,bot);
 });
 
+*/
+
 controller.hears('smalltalk(.*)', 'direct_message,direct_mention', dialogflowMiddleware.hears, function(bot, message) {
     console.log ("JSON   message received from SmallTalk: " + JSON.stringify(message));
     console.log ("Speech message received from SmallTalk: " + message.fulfillment.speech);
     bot.reply (message, message.fulfillment.speech);
 });
-*/
 
 controller.on('direct_message, direct_mention', function(bot, message) {
       bot.reply(message, 'I need an API token from Botkit Studio to do more stuff. Get one here: https://studio.botkit.ai')
