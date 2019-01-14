@@ -49,12 +49,12 @@ var controller = Botkit.teamsbot(bot_options);
 //
 // Addition for Dialogflow middleware
 //
-/*
+
 var dialogflowMiddleware = require('botkit-middleware-dialogflow')({
     token: process.env.DIALOGFLOW_CLIENT_ACCESS_KEY,
 });
 controller.middleware.receive.use(dialogflowMiddleware.receive);
-*/
+
 
 // Set up an Express-powered webserver to expose oauth and webhook endpoints
 var webserver = require(__dirname + '/components/express_webserver.js')(controller);
