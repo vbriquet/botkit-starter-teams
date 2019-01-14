@@ -10,6 +10,7 @@
     "async": "^2.5.0",
     "body-parser": "^1.15.2",
     "botkit": "^0.6.17",
+    "botkit-middleware-dialogflow": "1.2.0",
     "botkit-storage-mongo": "^1.0.6",
     "clone": "^2.1.1",
     "cookie-parser": "^1.4.3",
@@ -18,10 +19,12 @@
     "express": "^4.15.3",
     "express-hbs": "^1.0.4",
     "jquery": "^3.2.1",
+    "moment": "^2.21.0",
+    "moment-timezone": "^0.5.14",
     "mustache": "^2.3.0",
     "querystring": "^0.2.0",
     "request": "^2.79.0",
-    "wordfilter": "^0.2.6"
+    "wordfilter": "^0.2.6"   
   },
   "devDependencies": {},
   "repository": {
